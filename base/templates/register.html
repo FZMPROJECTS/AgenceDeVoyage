@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-4 ">
+            <h3>Créer votre compte</h3>
+            <hr>
+            
+            {% for message in messages  %}
+              <strong><i>{{ message }}</i></strong>
+              
+            {% endfor %}
+              
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="form-group">
+                    <label for="fname">Prénom</label>
+                    {{form.prenom | addclass:"form-control"}}
+                  </div>
+                  <div class="form-group">
+                    <label for="lname">nom</label>
+                    {{form.nom | addclass:"form-control"}}
+                  </div>
+                <div class="form-group">
+                  <label for="email">Adresse Email</label>
+                  {{form.email | addclass:"form-control"}}
+                  <small id="emailHelp" class="form-text text-muted">Nous n'allons jamais partager votre email.</small>
+                </div>
+                <div class="form-group">
+                  <label for="pwd" type="password">Mot de passe</label>
+                  {{form.pw | addclass:"form-control"}}
+                </div>
+                <div class="form-group">
+                    <label for="pwd2" type="password">Réentrer le Mot de passe</label>
+                    {{form.pw | addclass:"form-control"}}
+                  </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Selectionnez</label>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary" >Envoyez</button>
+              </form>
+        </div>
+              <div class="col-lg-6">
+                <img src="https://thumbs.dreamstime.com/b/cr%C3%A9ez-l-ic%C3%B4ne-de-compte-et-le-symbole-plat-unique-pour-interface-utilisateur-mobile-d-appli-logo-du-site-web-illustration-188812086.jpg " alt="" class="img-fluid img-reponsive>
+            </div>
+
+              
+        
+        
+    </div>
+</div>
+{% endblock %}

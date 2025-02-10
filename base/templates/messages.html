@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+Nos Voyages
+{% endblock %}
+ 
+ {% block content %}
+
+ {% for message in messages  %}
+            
+ <strong><i>{{ message }}</i></strong>
+ 
+{% endfor %}
+ <div class="container mt-3">
+    <h1> Messages de nos chers clients. </h1>
+    <br>
+    <hr>
+    <h4 class="text-center" ><U><I>Laisser nous vos messages.</I></U></h4>
+    <br>
+ 
+ {% for msg in mesg  %}
+ <div class="card mb-3" class="centered-element style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6 class="card-title"><U><I>{{msg.emails}}</I></U></h6>
+          <p class="card-text">{{msg.msg}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+ {% endfor %}
+ {% endblock content %}

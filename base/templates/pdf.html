@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+    
+{% for r in numres  %}
+<div class="container" style="border:3px solid black; padding: 10px;margin-top: 10px;margin-bottom: 10px;">
+    <div>
+{% if user.is_authenticated %}
+<h1 style="margin-top: 20px;margin-left: 50px;text-emphasis-color: #2E006C;" ><i><u>HELLO welcome {{user.first_name}} {{user.last_name}} to {{r.pays}}</u></i></h1>
+<br>
+<br>
+<p>Votre réservation est bien effectuer . Veuillez passer à la gence pour effectuer les procedures qui suivent.<br> N'oubliez pas 
+d'emmener avec vous les documents suivant : <br></p>
+
+<ul style="border:3px solid black; padding: 10px;margin-top: 10px;margin-bottom: 10px;">
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        La carte nationale
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        Le passport
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        Au moins la moitié du prix
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        Le screen du Numero de réservation
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        2 Photos
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        La carte de vaccin 
+    </li>
+    <li style="margin-left: 300px;margin-bottom: 20px;">
+        Photocopie du dossier médicale
+    </li>
+    
+</ul>
+<br>
+<h5><u>le numero de votre réservation est : {{r.id}}</u></h5>
+{% endif %}</div>
+
+</div>
+{% endfor %}
+<br>
+
+{% endblock content %}
+

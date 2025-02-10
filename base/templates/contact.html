@@ -1,0 +1,63 @@
+{%extends 'base.html' %}
+{% load custom_tag %}
+{% block content %}
+<div class="container">
+    {% for message in messages  %}
+            
+            <strong><i>{{ message }}</i></strong>
+            
+          {% endfor %}
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p-4 ">
+            <h3 class="fcf-h3">Contacter-Nous</h3>
+
+            <form  class="fcf-form-class" method="post" enctype="multipart/form-data" >
+                {% csrf_token %} 
+                <div class="form-group">
+                    <label for="Name" class="fcf-label">Votre nom</label>
+                    <div class="fcf-input-group">
+                        {{form.sender | addclass:"form-control"}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Email" class="fcf-label">Votre adresse email</label>
+                    <div class="fcf-input-group">
+                        {{form.emails | addclass:"form-control"}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Message" class="fcf-label">Votre message</label>
+                    <div class="fcf-input-group">
+                        {{form.msg | addclass:"form-control"}}
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="form-group" mt-3 mb-3">
+                    <button type="submit"  class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Envoyer Message</button>
+                </div>
+                <br>
+                <a class="nav-link btn btn-success text-white" href="{% url 'listeMessages' %}" >Voir les commentaires de nos clients</a>
+
+            </form>
+        </div>
+        <div class="col-lg-6" style="text-align: center;">
+            <br>
+            <br>
+            <br>
+            <img src="https://i0.wp.com/lacombederedoles.fr/wp-content/uploads/2022/04/contactez-nous.webp?fit=213%2C236&ssl=1" alt="" class="img-fluid img-reponsive align-items-lg-center">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>         <strong> Numero Téléphone :</strong>     0636889662 </p>
+            <hr>
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

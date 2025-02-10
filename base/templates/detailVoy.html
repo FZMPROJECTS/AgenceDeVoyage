@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+
+
+{% block content %}
+<div class="container mt-3">
+    <h3><I> <U>Voici plus de détail sur votre voyage de rêve . </U></I></h3>
+    <br>
+    <hr>
+    {% for v in voy %}
+    
+        
+    <div class="container">
+        <div class="row mt-5 mb-5 shadow">
+            <br>
+            <div class="col-lg-6 shadow p-4 ">
+                <br>
+                <br>
+                <br>
+                <img src="{{v.image2.url}}" class="card-img" alt="">
+                    
+                    <br>
+            </div>
+            <div class="col-lg-6" style="text-align: center;">
+                
+                <h1 class="text-center" style="color:#1034A6"><U><I>Voici la planification de votre voyage à {{v.pays}}</I></U></h1>
+                <br>
+                <br>
+                <div>
+                    <div id="barre">
+                        <div class="col-lg-6 shadow p-3" style="background-color: #0095B6; margin-block-start: auto;" >
+                            <br>
+                            <link rel="icon" href="C">
+                        <h4 class="text-white">ÉCOUTE</h4>
+                            <br>
+                            <p class="text-white">Des conseillers spécialisés à votre disposition pour vous aider à créer un voyage selon vos envies et votre budget.</p>
+                            
+                        </div>
+                        </div>
+                          
+                    <div class="col-lg-6 shadow p-4" style="background-color: #FF4901;margin-left: 270px; margin-block-end: auto; ">
+                        <br>
+                        <h4 class="text-white">PERSONNALISATION</h4>
+                        <br>
+                            <p class="text-white">Suivant les suggestions de votre conseiller mais aussi vos idées, nous construisons un voyage ultra-personnalisé : étapes, hébergements, activités, rencontres...</p>
+
+                        </div>
+                        <br>
+                        <a class="nav-link btn-dark text-white" style="margin-left: 300px;"  href="{% url 'contact' %}" >Messages</a> 
+                        <p style="margin-left: 220px;"><u>SI vous avez des idées laiser les ici   </u>⇈⇈</p>
+                        
+                        
+                
+                    </div>
+                
+                      
+                    <br>        
+                    
+            
+                <p>         <strong> Numero Téléphone :</strong>     0636889662 </p>
+                <br>
+                <br>
+                <div class="form-group" mt-3 mb-3">
+                    <a class="nav-link btn-dark text-white" style="margin-left: 300px;"  href="res/{{v.num}}" >Réserver</a>
+                </div>
+
+                <div class="form-group" mt-3 mb-3">
+                    <a class="nav-link btn-danger text-white" style="margin-left: 300px;"  href="{% url 'logout' %}" >Déconnexion</a>
+                </div>
+                <hr>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+
+
+
+
+    {% endfor %}
+{% endblock content %}
+    

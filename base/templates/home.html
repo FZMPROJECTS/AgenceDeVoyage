@@ -1,0 +1,76 @@
+ {% extends "base.html" %} 
+ 
+ {% block content %} 
+ <div class="container mt-3 mb-5">
+    <h3 class="mb-4">Venez réserver pour votre voyage de reve chez FLC angence, votre meilleur déstination.</h3>
+    <hr>
+    {% for message in messages  %}
+            
+    <strong><i>{{ message }}</i></strong>
+    
+  {% endfor %}
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Parc-dEtat-de-Waianapanapa-Hana-Hawai-Etats-Unis-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Hawaï</h5>
+                  <p class="card-text">Un autre endroit luxueux à visiter est Hawaï, en particulier la paisible ville de Hana. Imaginez passer du temps parmi les palmiers surplombant la baie de Kaihalulu et les champs luxuriants. </p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Forum-romain-Rome-Italie-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Italie</h5>
+                  <p class="card-text">L’Italie fait que tout le monde en retombe amoureux. Le vin italien, les pâtes italiennes et la romance italienne valent le détour.</p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Temple-Pura-Ulun-Danu-Bratan-Bali-Indonesie-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bali</h5>
+                  <p class="card-text">Bali est un endroit parfait pour des pauses bien-être luxueuses. Cette île volcanique offre une myriade de merveilles naturelles, des sources chaudes et des sentiers de cascade aux plages de renommée mondiale en passant par les rizières et les bains de boue.</p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Place-Rouge-Kremlin-de-Moscou-et-cathedrale-Saint-Basile-Moscou-Russie-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Russie</h5>
+                  <p class="card-text">La Russie est le plus grand pays du monde avec de nombreux endroits intéressants à visiter. Si vous voulez vivre quelque chose de nouveau, assurez-vous de visiter Moscou pour profiter de sa culture unique et de ses monuments architecturaux</p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Bora-Bora-Polynesie-francaise-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bora Bora</h5>
+                  <p class="card-text">Une petite île de Polynésie française est bien connue pour son incroyable lagon calme et ses paysages fantastiques de montagnes verdoyantes avec une riche végétation tropicale.</p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="https://www.thepinnaclelist.com/fr/wp-content/uploads/sites/2/2021/07/Villefranche-sur-Mer-Nice-Provence-Alpes-Cote-dAzur-France-Top-10-des-destinations-de-voyage-de-luxe-dans-le-monde.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">France</h5>
+                  <p class="card-text">Il existe de nombreuses raisons de choisir la France comme prochaine destination de voyage. Vous devriez absolument essayer le fromage français traditionnel et savourer un verre de Chardonnay ou de Champagne pour commencer</p>
+                  <a href="{% url 'login2' %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </div>
+ </div>
+
+ {% endblock %}

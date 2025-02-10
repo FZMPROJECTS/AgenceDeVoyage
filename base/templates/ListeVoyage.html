@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}
+Nos Voyages
+{% endblock %}
+ 
+ {% block content %}
+
+ {% for message in messages  %}
+            
+ <strong><i>{{ message }}</i></strong>
+ 
+{% endfor %}
+ <div class="container mt-3">
+    <h1> Explorer nos magnifiques voyages! </h1>
+    <br>
+    <hr>
+    <h4 class="text-center" ><U><I>Voici notre catalogue.</I></U></h4>
+    <br>
+ 
+ {% for voy in voyages  %}
+ 
+  
+ 
+  
+ <div class="card mb-3" class="centered-element style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4" class="centered-element">
+        <img src="{{voy.image.url}}" class="card-img" alt="">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{voy.pays}}</h5>
+          <h6>La Date du vol :</h6>
+          <p class="card-text">{{voy.voyageDate}}</p>
+          <p class="card-text"><small class="text-muted">Le nombre de place disponible : {{voy.nmbPlace}}</small></p>
+          
+          {% if voy.nmbPlace > 0 %}
+            
+          <a  class="btn btn-primary" href="detailVoy/{{voy.num}}" >{{voy.prix}} $</a> {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+ <!-- <div class="row" >
+        <div class="col-lg-4">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="{{voy.image.url}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{voy.pays}}</h5>
+                    <div>
+                        <h6>La Date du vol :</h6>
+                        <p>{{voy.voyageDate}}</p>
+                    </div>
+                    <div>
+                        <h6>Le nombre de place disponible :</h6>
+                        <p>{{voy.nmbPlace}}</p>
+                    </div>
+                
+                    <a href="" class="btn btn-primary">{{voy.prix}} $</a>
+                </div>
+            </div>
+        </div>
+</div>
+-->
+<br>
+ {% endfor %}
+
+    
+ </div>   
+ <a class="nav-link btn btn-success text-white" href="/logout" >Déconnecter</a>
+ <br>
+ <br>
+    
+ {% endblock content %}
+    
